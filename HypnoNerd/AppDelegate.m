@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HypnosisViewController.h"
 #import "ReminderViewController.h"
+#import "QuizViewController.h"
 
 @interface AppDelegate ()
 
@@ -32,9 +33,13 @@
     
     // 5
     ReminderViewController *rvc = [[ReminderViewController alloc]init];
-
+    
+    // Bronze Challenge: Another Tab”
+    //Excerpt From: Conway, Joe. “iOS Programming: The Big Nerd Ranch Guide (4th Edition) (Big Nerd Ranch Guides).” iBooks.
+    QuizViewController *qvz = [[QuizViewController alloc] init];
+    
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
-    tabBarController.viewControllers = @[hvc, rvc];
+    tabBarController.viewControllers = @[hvc, rvc, qvz];
     self.window.rootViewController = tabBarController;
     
     //self.window.rootViewController = rvc;

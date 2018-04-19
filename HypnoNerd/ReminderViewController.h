@@ -6,7 +6,6 @@
     //  Copyright © 2018 Zaur Giyasov. All rights reserved.
     //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 @interface ReminderViewController : UIViewController
