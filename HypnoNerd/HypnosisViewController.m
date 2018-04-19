@@ -21,13 +21,18 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Get the tab bar item
-        UITabBarItem *tbi = self.tabBarItem;
-        tbi.title = @"Hypnotize";
+        self.tabBarItem.title = @"Hypnotize";
         UIImage *image = [UIImage imageNamed:@"Hypno.png"];
-        tbi.image = image;
+        self.tabBarItem.image = image;
     }
     
     return self;
+}
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    NSLog(@"HypnosisViewController: (void)viewDidLoad");
 }
 
 @end
