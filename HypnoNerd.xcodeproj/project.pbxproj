@@ -11,6 +11,8 @@
 		CE143B7E2088B4B900A57C12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE143B7D2088B4B900A57C12 /* Assets.xcassets */; };
 		CE143B812088B4B900A57C12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE143B7F2088B4B900A57C12 /* LaunchScreen.storyboard */; };
 		CE143B842088B4B900A57C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B832088B4B900A57C12 /* main.m */; };
+		CE143B8C2088B56F00A57C12 /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B8A2088B56E00A57C12 /* HypnosisView.m */; };
+		CE143B8F2088B5B600A57C12 /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,10 @@
 		CE143B802088B4B900A57C12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE143B822088B4B900A57C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE143B832088B4B900A57C12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE143B8A2088B56E00A57C12 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
+		CE143B8B2088B56F00A57C12 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
+		CE143B8D2088B5B600A57C12 /* HypnosisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypnosisViewController.h; sourceTree = "<group>"; };
+		CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +59,16 @@
 		CE143B792088B4B700A57C12 /* HypnoNerd */ = {
 			isa = PBXGroup;
 			children = (
+				CE143B8B2088B56F00A57C12 /* HypnosisView.h */,
+				CE143B8A2088B56E00A57C12 /* HypnosisView.m */,
 				CE143B7A2088B4B800A57C12 /* AppDelegate.h */,
 				CE143B7B2088B4B800A57C12 /* AppDelegate.m */,
 				CE143B7D2088B4B900A57C12 /* Assets.xcassets */,
 				CE143B7F2088B4B900A57C12 /* LaunchScreen.storyboard */,
 				CE143B822088B4B900A57C12 /* Info.plist */,
 				CE143B832088B4B900A57C12 /* main.m */,
+				CE143B8D2088B5B600A57C12 /* HypnosisViewController.h */,
+				CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */,
 			);
 			path = HypnoNerd;
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 			files = (
 				CE143B842088B4B900A57C12 /* main.m in Sources */,
 				CE143B7C2088B4B800A57C12 /* AppDelegate.m in Sources */,
+				CE143B8C2088B56F00A57C12 /* HypnosisView.m in Sources */,
+				CE143B8F2088B5B600A57C12 /* HypnosisViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +285,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = StudyTest.HypnoNerd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -289,7 +301,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = StudyTest.HypnoNerd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
