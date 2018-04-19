@@ -13,6 +13,8 @@
 		CE143B842088B4B900A57C12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B832088B4B900A57C12 /* main.m */; };
 		CE143B8C2088B56F00A57C12 /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B8A2088B56E00A57C12 /* HypnosisView.m */; };
 		CE143B8F2088B5B600A57C12 /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */; };
+		CE143B922088BB4000A57C12 /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE143B912088BB4000A57C12 /* ReminderViewController.m */; };
+		CE143B942088BD8400A57C12 /* ReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE143B932088BD8400A57C12 /* ReminderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		CE143B8B2088B56F00A57C12 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
 		CE143B8D2088B5B600A57C12 /* HypnosisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HypnosisViewController.h; sourceTree = "<group>"; };
 		CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisViewController.m; sourceTree = "<group>"; };
+		CE143B902088BB4000A57C12 /* ReminderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
+		CE143B912088BB4000A57C12 /* ReminderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
+		CE143B932088BD8400A57C12 /* ReminderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,9 @@
 				CE143B832088B4B900A57C12 /* main.m */,
 				CE143B8D2088B5B600A57C12 /* HypnosisViewController.h */,
 				CE143B8E2088B5B600A57C12 /* HypnosisViewController.m */,
+				CE143B902088BB4000A57C12 /* ReminderViewController.h */,
+				CE143B912088BB4000A57C12 /* ReminderViewController.m */,
+				CE143B932088BD8400A57C12 /* ReminderViewController.xib */,
 			);
 			path = HypnoNerd;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE143B942088BD8400A57C12 /* ReminderViewController.xib in Resources */,
 				CE143B7E2088B4B900A57C12 /* Assets.xcassets in Resources */,
 				CE143B812088B4B900A57C12 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -146,6 +155,7 @@
 				CE143B7C2088B4B800A57C12 /* AppDelegate.m in Sources */,
 				CE143B8C2088B56F00A57C12 /* HypnosisView.m in Sources */,
 				CE143B8F2088B5B600A57C12 /* HypnosisViewController.m in Sources */,
+				CE143B922088BB4000A57C12 /* ReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

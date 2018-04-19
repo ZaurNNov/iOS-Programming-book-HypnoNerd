@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HypnosisViewController.h"
+#import "ReminderViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +22,19 @@
     // Override point for customization after application launch.
     
     HypnosisViewController *hvc = [[HypnosisViewController alloc]init];
-    self.window.rootViewController = hvc;
     
+    // This will get pointer to an object that represents the app bundle
+    NSBundle *appBundle = [NSBundle mainBundle];
+    
+    // Look in the appBundle for the file ReminderVC
+    ReminderViewController *rvc = [[ReminderViewController alloc]initWithNibName:@"ReminderViewController"
+                                                                          bundle:appBundle];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+    tabBarController.viewControllers = @[hvc, rvc];
+    self.window.rootViewController = tabBarController;
+    
+    //self.window.rootViewController = rvc;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
