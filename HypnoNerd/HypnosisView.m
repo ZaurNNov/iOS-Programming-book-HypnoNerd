@@ -10,8 +10,9 @@
 
 @interface HypnosisView ()
 
-@property (strong, nonatomic) UIColor *circleColor;
+//@property (strong, nonatomic) UIColor *circleColor;
 
+@property (nonatomic, strong) UISegmentedControl *segmentControl;
 
 @end
 
@@ -79,7 +80,44 @@
     
     //////////////////////////////////////
     // Gold Challenge: Shadows and Gradients
+    
+    
+//    // Segment
+//    _segmentControl = [[UISegmentedControl alloc]
+//                      initWithItems:@[@"Green", @"Blue", @"Red"]];
+//    _segmentControl.frame = CGRectMake(20, 30, 280, 30); // weigth = 320-(20+20)
+//    [_segmentControl addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventValueChanged];
+//    _segmentControl.backgroundColor = [UIColor clearColor];
+//    
+//    [self addSubview: _segmentControl];
 }
+
+//-(void)changeColor :(id)sender {
+//    if ([sender isKindOfClass:UISegmentedControl.class]) {
+//        UISegmentedControl *sc = (UISegmentedControl *)sender;
+//        switch (sc.selectedSegmentIndex) {
+//            case 0:
+//                self.circleColor = [UIColor greenColor]; break;
+//            case 1:
+//                self.circleColor = [UIColor blueColor]; break;
+//            case 2:
+//                self.circleColor = [UIColor redColor]; break;
+//                
+//            default: self.circleColor = [UIColor grayColor]; break;
+//        }
+//    }
+//}
+
+//-(void)setSegmentControl:(UISegmentedControl *)segmentControl {
+//    segmentControl = [[UISegmentedControl alloc]
+//                              initWithItems:@[@"Green", @"Blue", @"Red"]];
+//    segmentControl.frame = CGRectMake(20, 30, 280, 30); // weigth = 320-(20+20)
+//    [segmentControl addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventValueChanged];
+//    segmentControl.backgroundColor = [UIColor clearColor];
+//
+//    _segmentControl = segmentControl;
+//}
+
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -110,6 +148,10 @@
     _circleColor = circleColor;
     [self setNeedsDisplay];
 }
+
+
+// Segment
+
 
 
 @end

@@ -24,6 +24,19 @@
         self.tabBarItem.title = @"Hypnotize";
         UIImage *image = [UIImage imageNamed:@"Hypno.png"];
         self.tabBarItem.image = image;
+        
+        // Segment
+        UISegmentedControl *segmentControl = [[UISegmentedControl alloc]
+                           initWithItems:@[@"Green", @"Blue", @"Red"]];
+        //position
+        segmentControl.frame = CGRectMake(20, 30, 280, 30); // weigth = 320-(20+20)
+        //action
+        [segmentControl addTarget:self action:@selector(changeColor:) forControlEvents:UIControlEventValueChanged];
+        //colors
+        segmentControl.backgroundColor = [UIColor lightGrayColor];
+        segmentControl.tintColor = [UIColor yellowColor];
+        //adding
+        [self.view addSubview: segmentControl];
     }
     
     return self;
@@ -34,5 +47,29 @@
     
     NSLog(@"HypnosisViewController: (void)viewDidLoad");
 }
+
+-(void)changeColor :(id)sender {
+    if ([sender isKindOfClass:UISegmentedControl.class]) {
+        UISegmentedControl *sc = (UISegmentedControl *)sender;
+        switch (sc.selectedSegmentIndex) {
+            case 0:
+//                ((HypnosisView *)self.view).circleColor = [UIColor greenColor];
+                //key-Value method
+                [((HypnosisView *)self.view) setValue:[UIColor greenColor] forKey:@"circleColor"];
+                break;
+            case 1:
+                ((HypnosisView *)self.view).circleColor = [UIColor blueColor];
+                break;
+            case 2:
+                ((HypnosisView *)self.view).circleColor = [UIColor redColor];
+                break;
+                
+            default: ((HypnosisView *)self.view).circleColor = [UIColor grayColor];
+                break;
+        }
+    }
+}
+
+
 
 @end
