@@ -25,6 +25,8 @@
         UIImage *image = [UIImage imageNamed:@"Hypno.png"];
         self.tabBarItem.image = image;
         
+        // Challenge 6
+        /*
         // Segment
         UISegmentedControl *segmentControl = [[UISegmentedControl alloc]
                            initWithItems:@[@"Green", @"Blue", @"Red"]];
@@ -37,6 +39,7 @@
         segmentControl.tintColor = [UIColor yellowColor];
         //adding
         [self.view addSubview: segmentControl];
+         */
     }
     
     return self;
@@ -48,6 +51,8 @@
     NSLog(@"HypnosisViewController: (void)viewDidLoad");
 }
 
+// Challenge 6
+/*
 -(void)changeColor :(id)sender {
     if ([sender isKindOfClass:UISegmentedControl.class]) {
         UISegmentedControl *sc = (UISegmentedControl *)sender;
@@ -69,6 +74,7 @@
         }
     }
 }
+ */
 
 
 
