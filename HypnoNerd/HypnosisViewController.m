@@ -67,6 +67,27 @@
         //add it
         [self.view addSubview:messageLabel];
         
+        // Animation
+        // Set the label init alpha
+        messageLabel.alpha = 0.0;
+        
+        // 1
+        /*
+        [UIView animateWithDuration:0.7 animations:^{
+            messageLabel.alpha = 1;
+        }];
+         */
+        
+        // 2
+        [UIView animateWithDuration:0.6
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             messageLabel.alpha = 1;
+                         } completion:^(BOOL finished) {
+                             NSLog(@"Cool animation complete!");
+                         }];
+        
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
         motionEffect.minimumRelativeValue = @(-25);
