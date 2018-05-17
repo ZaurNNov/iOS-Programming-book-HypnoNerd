@@ -11,6 +11,8 @@
 
 @interface HypnosisViewController () <UITextFieldDelegate>
 
+@property (nonatomic, weak) UITextField *textField;
+
 @end
 
 @implementation HypnosisViewController
@@ -30,7 +32,7 @@
     textField.delegate = self;
     [backgroundView addSubview:textField];
     
-    
+    self.textField = textField;
     self.view = backgroundView;
 }
 
@@ -178,6 +180,23 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.textField.placeholder = @"Enter some text!";
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:2
+                          delay:0
+         usingSpringWithDamping:0.25
+          initialSpringVelocity:0.1
+                        options:0
+                     animations:^{
+                         CGRect frame = CGRectMake(40, 70, 240, 30);
+                         self.textField.frame = frame;
+                     } completion:^(BOOL finished) {
+                         NSLog(@"Other animatiom start-end");
+                     }];
 }
 
 
