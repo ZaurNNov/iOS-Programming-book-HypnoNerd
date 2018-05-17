@@ -78,7 +78,7 @@
         }];
          */
         
-        // 2
+
         [UIView animateWithDuration:0.6
                               delay:0.0
                             options:UIViewAnimationOptionCurveEaseInOut
@@ -87,6 +87,50 @@
                          } completion:^(BOOL finished) {
                              NSLog(@"Cool animation complete!");
                          }];
+        
+        // 2
+        /*
+        [UIView animateKeyframesWithDuration:1.0
+                                       delay:0.0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0
+                                                              relativeDuration:0.8
+                                                                    animations:^{
+                                                                        messageLabel.center = self.view.center;
+                                                                    }];
+                                      [UIView addKeyframeWithRelativeStartTime:0.8
+                                                              relativeDuration:0.2
+                                                                    animations:^{
+                                                                        int x = arc4random() % width;
+                                                                        int y = arc4random() % heght;
+                                                                        messageLabel.center = CGPointMake(x, y);
+                                                                    }];
+                                  } completion:^(BOOL finished) {
+                                      NSLog(@"Second animation complete!");
+                                  }];
+        */
+        
+        // 3
+        [UIView animateKeyframesWithDuration:1
+                                       delay:0
+                                     options:0
+                                  animations:^{
+                                      [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:0.8
+                                                                animations:^{
+                                                                    messageLabel.center = self.view.center;
+                                                                }];
+                                      
+                                      [UIView addKeyframeWithRelativeStartTime:0.8 relativeDuration:0.2
+                                                                    animations:^{
+                                                                        int x = arc4random() % width;
+                                                                        int y = arc4random() % heght;
+                                                                        messageLabel.center = CGPointMake(x, y);
+                                                                    }];
+                                      
+                                  } completion:^(BOOL finished) {
+                                      NSLog(@"Second animation complete!");
+        }];
         
         UIInterpolatingMotionEffect *motionEffect;
         motionEffect = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
