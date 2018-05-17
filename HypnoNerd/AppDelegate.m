@@ -17,35 +17,55 @@
 
 @implementation AppDelegate
 
+-(UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder {
+        // Create new NC
+    UIViewController *vc = [[UINavigationController alloc] init];
+    
+        // the last object in the path array is the restoration id for this view controller
+    vc.restorationIdentifier = [identifierComponents lastObject];
+    
+        // If there is only 1 id, then this is the root vc
+    if ([identifierComponents count] == 1) {
+        self.window.rootViewController = vc;
+    }
+    
+    return vc;
+}
+
+-(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    return YES;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
-    HypnosisViewController *hvc = [[HypnosisViewController alloc]init];
+    if (!self.window.rootViewController) {
+        HypnosisViewController *hvc = [[HypnosisViewController alloc]init];
+        ReminderViewController *rvc = [[ReminderViewController alloc]init];
+        QuizViewController *qvz = [[QuizViewController alloc] init];
+        UITabBarController *tabBarController = [[UITabBarController alloc]init];
+        tabBarController.viewControllers = @[hvc, rvc, qvz];
+        
+        self.window.rootViewController = tabBarController;
+    }
     
-    // This will get pointer to an object that represents the app bundle
-    // NSBundle *appBundle = [NSBundle mainBundle];
-    
-    // Look in the appBundle for the file ReminderVC
-    // ReminderViewController *rvc = [[ReminderViewController alloc]initWithNibName:@"ReminderViewController"
-    // bundle:appBundle];
-    
-    // 5
-    ReminderViewController *rvc = [[ReminderViewController alloc]init];
-    
-    // Bronze Challenge: Another Tab”
-    //Excerpt From: Conway, Joe. “iOS Programming: The Big Nerd Ranch Guide (4th Edition) (Big Nerd Ranch Guides).” iBooks.
-    QuizViewController *qvz = [[QuizViewController alloc] init];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc]init];
-    tabBarController.viewControllers = @[hvc, rvc, qvz];
-    self.window.rootViewController = tabBarController;
-    
-    //self.window.rootViewController = rvc;
-    
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     return YES;
 }
 

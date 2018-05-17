@@ -25,6 +25,9 @@
         UIImage *image = [UIImage imageNamed:@"Hypno.png"];
         self.tabBarItem.image = image;
         
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
+        
         // Segment
         UISegmentedControl *segmentControl = [[UISegmentedControl alloc]
                            initWithItems:@[@"Green", @"Blue", @"Red"]];
@@ -44,8 +47,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSLog(@"HypnosisViewController: (void)viewDidLoad");
 }
 
 -(void)changeColor :(id)sender {
@@ -70,6 +71,13 @@
     }
 }
 
+
+
++ (nullable UIViewController *)viewControllerWithRestorationIdentifierPath:(nonnull NSArray *)identifierComponents coder:(nonnull NSCoder *)coder {
+    HypnosisViewController *hvc = [[self alloc] init];
+    [[[[[UIApplication sharedApplication] delegate] window] rootViewController] addChildViewController:hvc];
+    return hvc;
+}
 
 
 @end
